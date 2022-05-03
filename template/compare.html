@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Slider - ECast</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/Montserrat.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css"
+    />
+    <link rel="stylesheet" href="static/css/vanilla-zoom.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand logo" href="{{url_for('home')}}">ECast</a
+        ><button
+          data-bs-toggle="collapse"
+          class="navbar-toggler"
+          data-bs-target="#navcol-1"
+        >
+          <span class="visually-hidden">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('home')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{url_for('compare')}}"
+                >Compare</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('plot')}}">Plots</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('about')}}">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="page">
+      <section
+        class="clean-block slider"
+        style="height: 215px; max-height: 215px"
+      >
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">Compare</h2>
+            <p>Compare Values for two regions</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section>
+      <div>
+        <!-- Start: 1 Row 3 Columns -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="dropdown" style="text-align: center; margin: 10px">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  type="button"
+                >
+                  {{Name}}&nbsp;
+                </button>
+                <div class="dropdown-menu">
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1,region2=Region2, name='Demand') }}"
+                    >Demand</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1,region2=Region2, name='Net Generation') }}"
+                    >Net Generation</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dropdown" style="text-align: center">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  type="button"
+                >
+                  {{Region1}}&nbsp;
+                </button>
+               
+                <div class="dropdown-menu text-start">
+                  <a
+                    href="{{ url_for('compare', region1='NW', region2=Region2,name=Name)}}"
+                    class="dropdown-item"
+                    >Northwest</a
+                  ><a
+                    class="dropdown-item text-start"
+                    href="{{ url_for('compare', region1='SE',region2=Region2,name=Name) }}"
+                    >Southeast</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='SW',region2=Region2,name=Name) }}"
+                    >Southwest</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='MIDW', region2=Region2,name=Name) }}"
+                    >Midwest</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='CENT', region2=Region2,name=Name) }}"
+                    >Central</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='MIDA', region2=Region2,name=Name) }}"
+                    >Mid-Atlantic</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='CAL', region2=Region2,name=Name) }}"
+                    >California</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='TEX', region2=Region2,name=Name) }}"
+                    >Texas</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='NY', region2=Region2,name=Name) }}"
+                    >Newyork</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='NE', region2=Region2,name=Name) }}"
+                    >New England</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='TEN', region2=Region2,name=Name) }}"
+                    >Tennessee</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare', region1='FLA', region2=Region2,name=Name) }}"
+                    >Florida</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="dropdown"
+                style="text-align: center"
+              >
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  type="button"
+                >
+                  {{Region2}}
+                </button>
+                <div class="dropdown-menu text-start">
+                  <a
+                    href="{{ url_for('compare', region1=Region1,region2='NW',name=Name) }}"
+                    class="dropdown-item"
+                    >Northwest</a
+                  ><a
+                    class="dropdown-item text-start"
+                    href="{{ url_for('compare',region1=Region1, region2='SE',name=Name) }}"
+                    >Southeast</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='SW',name=Name) }}"
+                    >Southwest</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='MIDW',name=Name) }}"
+                    >Midwest</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='CENT',name=Name) }}"
+                    >Central</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='MIDA',name=Name) }}"
+                    >Mid-Atlantic</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='CAL',name=Name) }}"
+                    >California</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='TEX',name=Name) }}"
+                    >Texas</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='NY',name=Name) }}"
+                    >Newyork</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='NE',name=Name) }}"
+                    >New England</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='TEN',name=Name) }}"
+                    >Tennessee</a
+                  ><a
+                    class="dropdown-item"
+                    href="{{ url_for('compare',region1=Region1, region2='FLA',name=Name) }}"
+                    >Florida</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End: 1 Row 3 Columns -->
+      </div>
+    </section>
+    <div>
+      <!-- Start: 1 Row 2 Columns -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" style="margin-top: 30px">
+            <div id="chart" class="chart"></div>
+
+            <div></div>
+          </div>
+          <div class="col-md-6" style="margin-top: 30px">
+            <div id="chart1" class="chart1"></div>
+
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <!-- End: 1 Row 2 Columns -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script type="text/javascript">
+        var graphs = {{graphJSON0 | safe}};
+        var graphs1 = {{graphJSON1 | safe}};
+        Plotly.plot('chart',graphs,{});
+        Plotly.plot('chart1',graphs1,{});
+      </script>
+    </div>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="static/js/vanilla-zoom.js"></script>
+    <script src="static/js/theme.js"></script>
+  </body>
+</html>

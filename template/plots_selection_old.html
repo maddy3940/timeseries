@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Services - ECast</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/Montserrat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="static/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <form action="{{url_for('plot_selection')}}" method = 'post'>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="{{url_for('home')}}">ECast</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('home')}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('compare')}}">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('plot')}}">Plots</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('about')}}">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page service-page">
+        <section class="clean-block clean-services dark" style="height: 125.328px;">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="margin: -23px;margin-top: -29px;">Plots</h2>
+                </div>
+            </div>
+        </section>
+    </main><!-- Start: 1 Row 2 Columns -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="margin-top: 20px;">
+                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" >{{Region}}&nbsp;</button>
+                    <div class="dropdown-menu">
+                        <a href= "{{ url_for('plot_selection', region='NW') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'NW' name = 'NW' value = 'NW'>Northwest</a>
+                        <a href= "{{ url_for('plot_selection', region='SW') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'SW' name = 'SW' value = 'SW'>Southwest</a>
+                        <a href= "{{ url_for('plot_selection', region='SE') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'SE' name = 'SE' value = 'SE'>Southeast</a>
+                        <a href= "{{ url_for('plot_selection', region='MIDW') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'MIDW' name = 'MIDW' value = 'NW'>Midwest</a>
+                        <a href= "{{ url_for('plot_selection', region='CENT') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'CENT' name = 'CENT' value = 'CENT'>Central</a>
+                        <a href= "{{ url_for('plot_selection', region='MIDA') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'MIDA' name = 'MIDA' value = 'MIDA'>Mid-Atlantic</a>
+                        <a href= "{{ url_for('plot_selection', region='CAL') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'CAL' name = 'CAL' value = 'CAL'>California</a>
+                        <a href= "{{ url_for('plot_selection', region='CAR') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'CAR' name = 'CAR' value = 'CAR'>Carolinas</a>
+                        <a href= "{{ url_for('plot_selection', region='TEX') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'TEX' name = 'TEX' value = 'TEX'>Texas</a>
+                        <a href= "{{ url_for('plot_selection', region='NY') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'NY' name = 'NY' value = 'NY'>Newyork</a>
+                        <a href= "{{ url_for('plot_selection', region='NE') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'NE' name = 'NE' value = 'NE'>New England</a>
+                        <a href= "{{ url_for('plot_selection', region='TEN') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'TEN' name = 'TEN' value = 'TEN'>Tennessee</a>
+                        <a href= "{{ url_for('plot_selection', region='FLA') }}" class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'FLA' name = 'FLA' value = 'FLA'>Florida</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top: 20px;">
+                <!-- <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Frequency&nbsp;</button>
+                    <div class="dropdown-menu"> -->
+                        <!-- <a class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'Daily' name = 'Daily' value = 'Daily'>Daily</a> -->
+                        <!-- <a class="dropdown-item" href="{{url_for('plot_selection')}}" id = 'Monthly' name = 'Monthly' value = 'Monthly'>Monthly</a> -->
+                    <!-- </div>
+                </div> -->
+                <!-- <p>{{Duration}}</p> -->
+            </div>
+        </div>
+    </div><!-- End: 1 Row 2 Columns -->
+    <!-- Start: 1 Row 1 Column -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 20px;">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="col-md-12" style="margin-top: 20px;">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div><!-- End: 1 Row 1 Column -->
+    <div></div>
+    <center><img src="{{Address}}" width="1000" height="500"></center>
+
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="static/js/vanilla-zoom.js"></script>
+    <script src="static/js/theme.js"></script>
+    </form>
+</body>
+
+</html>

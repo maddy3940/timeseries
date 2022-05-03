@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - ECast</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/Montserrat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="static/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="{{url_for('home')}}">ECast</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{{url_for('home')}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('compare')}}">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('plot')}}">Plots</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('about')}}">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="background-image: url(&quot;static/img/tech/AdobeStock_182646517_Preview.jpeg&quot;);color: rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h1>US Energy Demand &amp; Generation Forecasting</h1>
+            </div>
+        </section>
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">About the Project</h2>
+                    <p style="max-width: 600px;">Forecasting of power generation and demand plays an essential role in the electric industry, as it provides the basis for making decisions in power system planning and operation. In this project, we look at electricity generation and demand data from different regions in the US and apply various time series modeling algorithms to predict the demand and thereby optimize generation of power for these regions for different time periods ranging from one day to one year.</p>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block about-us">
+            <div class="container">
+                <div class="block-heading">
+                    <h1 class="text-info">About Us</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="static/img/avatars/Image%201.jpg" style="height: 500px;">
+                            <div class="card-body info">
+                                <h4 class="card-title"><strong>Mahadevan Iyer</strong></h4>
+                                <p class="card-text">mahiyer@iu.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="static/img/avatars/WhatsApp%20Image%202022-04-24%20at%2012.59.09%20PM.jpeg" style="height: 500px;">
+                            <div class="card-body info">
+                                <h4 class="card-title"><strong>Sai Prajwal Reddy</strong></h4>
+                                <p class="card-text">reddysai@iu.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card text-center clean-card"><img class="card-img-top w-100 d-block" src="static/img/avatars/WhatsApp%20Image%202022-04-23%20at%2010.32.59%20PM.jpeg" style="height: 500px;">
+                            <div class="card-body info">
+                                <h4 class="card-title"><strong>Samardeep Gurudatta</strong></h4>
+                                <p class="card-text">samgurud@iu.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="static/js/vanilla-zoom.js"></script>
+    <script src="static/js/theme.js"></script>
+</body>
+
+</html>
